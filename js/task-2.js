@@ -8,7 +8,12 @@ function calcAverageCalories(days) {
   for (let i = 0; i < days.length; i++) {
     totalCalories += days[i].calories;
   }
-  return totalCalories / days.length;
+
+  if (days.length === 0) {
+    return 0;
+  } else {
+    return totalCalories / days.length;
+  }
 }
 
 console.log(
@@ -20,7 +25,7 @@ console.log(
     { day: 'friday', calories: 3450 },
     { day: 'saturday', calories: 3280 },
     { day: 'sunday', calories: 3300 },
-  ])
+  ]),
 ); // 3180
 
 console.log(
@@ -32,7 +37,7 @@ console.log(
     { day: 'friday', calories: 2370 },
     { day: 'saturday', calories: 2280 },
     { day: 'sunday', calories: 2610 },
-  ])
+  ]),
 ); // 2270
 
 console.log(calcAverageCalories([])); // 0
